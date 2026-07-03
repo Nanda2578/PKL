@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560">
+  <rect width="900" height="560" fill="#f2e8cf"/>
+  <circle cx="720" cy="90" r="72" fill="#f7b267" opacity=".55"/>
+  <circle cx="160" cy="460" r="120" fill="#a7c957" opacity=".35"/>
+  <g transform="translate(120 70)">
+    <use href="#cup"/>
+  </g>
+  <g transform="translate(335 45)">
+    <use href="#cup"/>
+  </g>
+  <g transform="translate(550 70)">
+    <use href="#cup"/>
+  </g>
+  <defs>
+    <g id="cup">
+      <ellipse cx="105" cy="410" rx="78" ry="18" fill="#31572c" opacity=".14"/>
+      <path d="M30 65h150l-20 270c-4 48-24 66-55 66s-51-18-55-66L30 65z" fill="#fffdf5"/>
+      <path d="M44 150h122l-14 185c-3 34-18 48-47 48s-44-14-47-48z" fill="#6a994e"/>
+      <path d="M43 88h124v76H43z" fill="#fffaf0"/>
+      <ellipse cx="105" cy="65" rx="86" ry="27" fill="#fffdf5"/>
+      <ellipse cx="105" cy="65" rx="61" ry="16" fill="#a7c957"/>
+      <rect x="63" y="220" width="84" height="54" rx="8" fill="#fffdf5"/>
+      <text x="105" y="253" text-anchor="middle" font-family="Arial" font-size="18" font-weight="700" fill="#31572c">Mama</text>
+    </g>
+  </defs>
+</svg>

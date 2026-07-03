@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 560">
+  <rect width="560" height="560" fill="#fbf7ec"/>
+  <path d="M170 104h220l34 348c4 44-18 72-62 72H198c-44 0-66-28-62-72z" fill="#ffffff" stroke="#d8dfc3" stroke-width="4"/>
+  <path d="M190 164h180l23 248H167z" fill="#f2e8cf"/>
+  <circle cx="280" cy="290" r="84" fill="#6a994e"/>
+  <text x="280" y="300" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#fffdf5">Mama</text>
+  <path d="M220 104c0-44 26-72 60-72s60 28 60 72" fill="none" stroke="#31572c" stroke-width="18" stroke-linecap="round"/>
+  <path d="M130 462h300" stroke="#31572c" stroke-width="18" stroke-linecap="round" opacity=".16"/>
+</svg>
