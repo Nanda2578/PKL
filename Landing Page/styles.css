@@ -285,6 +285,8 @@ h3 {
 
 .hero-visual img {
   width: 100%;
+  border-radius: 50px;
+  object-fit: cover;
   filter: drop-shadow(0 28px 42px rgba(49, 87, 44, 0.2));
 }
 
@@ -362,12 +364,25 @@ h3 {
 
 .menu-grid {
   display: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: auto;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
 
+/* Menu nomor 1 sampai 4 (Baris pertama): Lebarnya dibagi 4 kolom */
+.menu-grid .menu-card:nth-child(-n+4) {
+  flex: 0 0 calc(25% - 14px);
+}
+
+.menu-grid .menu-card:nth-child(n+5) {
+  flex: 0 0 calc(33.333% - 12px);
+}
+
 .menu-card {
   overflow: hidden;
+  height: auto;
 }
 
 .menu-image {
@@ -380,6 +395,7 @@ h3 {
 
 .menu-image img {
   width: 74%;
+  border-radius: 32px;
   height: 84%;
   object-fit: contain;
 }
@@ -1233,7 +1249,10 @@ textarea {
   .order-layout,
   .tracking-panel,
   .admin-grid,
-  .admin-management-grid {
+  .admin-management-grid
+  .menu-grid .menu-card:nth-child(-n+4),
+  .menu-grid .menu-card:nth-child(n+5) {
+    flex: 0 0 100%;
     grid-template-columns: 1fr;
   }
 
@@ -1272,7 +1291,7 @@ textarea {
     grid-column: 1 / -1;
     height: auto;
   }
-}
+
 
 @media (max-width: 760px) {
   .container,
@@ -1371,4 +1390,5 @@ textarea {
   .cta-panel {
     padding: 28px;
   }
+}
 }

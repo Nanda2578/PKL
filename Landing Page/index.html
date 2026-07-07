@@ -9,13 +9,15 @@
       content="Mamamatcha menghadirkan minuman matcha creamy, segar, dan cocok dinikmati kapan saja. Lihat menu dan pesan favoritmu sekarang."
     />
     <link rel="stylesheet" href="styles.css" />
+    <!-- Link untuk memanggil logo/ikon media sosial resmi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
   </head>
   <body>
     <header class="site-header" id="beranda">
       <nav class="navbar" aria-label="Navigasi utama">
-        <a href="#beranda" class="brand" aria-label="Mamamatcha beranda">
-          <span class="brand-mark">M</span>
-          <span>Mamamatcha</span>
+        <a href="#beranda" class="brand" aria-label="Mamamatcha beranda" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+          <img src="assets/mamamatchalogo.png" alt="Logo Mamamatcha" style="width: 40px; height: 40px; object-fit: contain;">
+          <span style="font-weight: bold; color: var(--matcha-deep);">Mamamatcha</span>
         </a>
 
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
@@ -45,36 +47,32 @@
       <section class="hero section-band">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Fresh matcha daily</p>
-            <h1>Mamamatcha, Matcha Creamy Buat Mood Lebih Happy</h1>
+            <p class="eyebrow">@mamamatcha.losari</p>
+            <h1>Mamamatcha, Drama Free, Just Matcha. Great Vibes Great Matcha</h1>
             <p class="hero-text">
-              Minuman matcha segar dengan rasa lembut, creamy, dan cocok dinikmati kapan saja.
-              Pilih varian favoritmu, lalu order langsung tanpa ribet.
+              Dari matcha klasik sampai kreasi kekinian, semua dibuat dengan takaran pas dan bahan berkualitas.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://wa.me/6281234567890?text=Halo%20Mamamatcha%2C%20saya%20mau%20pesan" target="_blank" rel="noreferrer">
-                Pesan Sekarang
-              </a>
               <a class="btn btn-secondary" href="#menu">Lihat Menu</a>
             </div>
             <div class="hero-stats" aria-label="Ringkasan Mamamatcha">
               <div>
-                <strong>4+</strong>
+                <strong>7+</strong>
                 <span>Varian rasa</span>
               </div>
               <div>
-                <strong>4.9</strong>
-                <span>Rating pelanggan</span>
+                <strong>100%</strong>
+                <span>Matcha premium</span>
               </div>
               <div>
-                <strong>15m</strong>
-                <span>Siap pickup</span>
+                <strong>1 tahun</strong>
+                <span>Berdiri sejak 2025</span>
               </div>
             </div>
           </div>
 
           <div class="hero-visual" aria-label="Produk Mamamatcha">
-            <img src="assets/hero-matcha.svg" alt="Tiga cup Mamamatcha dengan matcha latte creamy" />
+            <img src="assets/allmenu2.jpeg" alt="Mamamatcha" />
           </div>
         </div>
       </section>
@@ -82,7 +80,7 @@
       <section class="section" id="keunggulan">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Kenapa Mamamatcha</p>
+            <p class="eyebrow">Kenapa Mamamatcha?</p>
             <h2>Matcha yang lembut, segar, dan gampang disuka.</h2>
           </div>
 
@@ -131,18 +129,18 @@
           <div class="menu-grid">
             <article class="menu-card">
               <div class="menu-image">
-                <img src="assets/menu-original.svg" alt="Original Matcha Latte Mamamatcha" />
+                <img src="assets/matchaog.jpeg" alt="Choco Matcha" />
                 <span class="badge">Best Seller</span>
               </div>
               <div class="menu-info">
-                <h3>Original Matcha Latte</h3>
-                <p>Matcha klasik dengan susu creamy dan rasa seimbang.</p>
+                <h3>Matcha OG</h3>
+                <p>Rasa autentik matcha murni klasik yang bold, pahit-manisnya pas, dan super smooth.</p>
                 <div class="menu-meta" aria-label="Detail Original Matcha Latte">
                   <span>Regular 16 oz</span>
-                  <span>Matcha + fresh milk</span>
+                  <span>Matcha Original</span>
                 </div>
                 <div class="menu-footer">
-                  <strong>Rp18.000</strong>
+                  <strong>Rp12.000</strong>
                   <button class="order-btn" type="button" data-product="Original Matcha Latte">Beli</button>
                 </div>
               </div>
@@ -150,17 +148,17 @@
 
             <article class="menu-card">
               <div class="menu-image">
-                <img src="assets/menu-brown-sugar.svg" alt="Matcha Brown Sugar Mamamatcha" />
+                <img src="assets/honeymatcha.jpeg" alt="Honey Matcha" />
               </div>
               <div class="menu-info">
-                <h3>Matcha Brown Sugar</h3>
-                <p>Matcha creamy dengan manis khas brown sugar.</p>
+                <h3>Honey Matcha</h3>
+                <p>Matcha segar dengan manisnya madu alami yang sehat dan bikin rileks.</p>
                 <div class="menu-meta" aria-label="Detail Matcha Brown Sugar">
                   <span>Regular 16 oz</span>
-                  <span>Brown sugar syrup</span>
+                  <span>Sweet Honey</span>
                 </div>
                 <div class="menu-footer">
-                  <strong>Rp20.000</strong>
+                  <strong>Rp15.000</strong>
                   <button class="order-btn" type="button" data-product="Matcha Brown Sugar">Beli</button>
                 </div>
               </div>
@@ -168,18 +166,18 @@
 
             <article class="menu-card">
               <div class="menu-image">
-                <img src="assets/menu-cheese.svg" alt="Matcha Cheese Cream Mamamatcha" />
+                <img src="assets/rvmatcha.jpeg" alt="Red Velvet Cloud" />
                 <span class="badge badge-light">New</span>
               </div>
               <div class="menu-info">
-                <h3>Matcha Cheese Cream</h3>
-                <p>Matcha segar dengan topping cheese cream lembut.</p>
+                <h3>Red Velvet Cloud</h3>
+                <p>Sentuhan kue red velvet mewah berbalut cream cheese lembut khas Mamamatcha.</p>
                 <div class="menu-meta" aria-label="Detail Matcha Cheese Cream">
                   <span>Regular 16 oz</span>
-                  <span>Cheese cream topping</span>
+                  <span>Sweet Red Velvet</span>
                 </div>
                 <div class="menu-footer">
-                  <strong>Rp23.000</strong>
+                  <strong>Rp15.000</strong>
                   <button class="order-btn" type="button" data-product="Matcha Cheese Cream">Beli</button>
                 </div>
               </div>
@@ -187,21 +185,131 @@
 
             <article class="menu-card">
               <div class="menu-image">
-                <img src="assets/menu-choco.svg" alt="Matcha Choco Mamamatcha" />
+                <img src="assets/strawberrycreammatcha.jpeg" alt="Strawberry Cream Matcha" />
               </div>
               <div class="menu-info">
-                <h3>Matcha Choco</h3>
-                <p>Perpaduan matcha dan cokelat untuk rasa lebih rich.</p>
+                <h3>Strawberry Cream Matcha</h3>
+                <p>Lapisan stroberi asam-manis berpadu susu creamy dan matcha estetik.</p>
                 <div class="menu-meta" aria-label="Detail Matcha Choco">
                   <span>Regular 16 oz</span>
-                  <span>Matcha + chocolate</span>
+                  <span>Matcha + Cream Strawberry</span>
                 </div>
                 <div class="menu-footer">
-                  <strong>Rp21.000</strong>
+                  <strong>Rp15.000</strong>
                   <button class="order-btn" type="button" data-product="Matcha Choco">Beli</button>
                 </div>
               </div>
             </article>
+
+            <article class="menu-card">
+              <div class="menu-image">
+                <img src="assets/orangematcha.jpeg" alt="Orange Matcha" />
+              </div>
+              <div class="menu-info">
+                <h3>Orange Matcha</h3>
+                <p>Kombinasi unik matcha dan buah jeruk asli yang segar alami.</p>
+                <div class="menu-meta" aria-label="Detail Matcha Brown Sugar">
+                  <span>Regular 16 oz</span>
+                  <span>Fresh + Slice Orange</span>
+                </div>
+                <div class="menu-footer">
+                  <strong>Rp15.000</strong>
+                  <button class="order-btn" type="button" data-product="Matcha Brown Sugar">Beli</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-image">
+                <img src="assets/taropunch.jpeg" alt="Taro Punch Matcha" />
+                <span class="badge badge-light">New</span>
+              </div>
+              <div class="menu-info">
+                <h3>Taro Punch Matcha</h3>
+                <p>Paduan unik rasa taro manis gurih berpadu segarnya matcha premium.</p>
+                <div class="menu-meta" aria-label="Detail Matcha Cheese Cream">
+                  <span>Regular 16 oz</span>
+                  <span>Crunchy Taro</span>
+                </div>
+                <div class="menu-footer">
+                  <strong>Rp15.000</strong>
+                  <button class="order-btn" type="button" data-product="Matcha Cheese Cream">Beli</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-image">
+                <img src="assets/matchacloud.jpeg" alt="Matcha Cloud" />
+              </div>
+              <div class="menu-info">
+                <h3>Matcha Cloud</h3>
+                <p>Matcha klasik dengan lapisan cream cheese gurih dan lembut di atasnya.</p>
+                <div class="menu-meta" aria-label="Detail Matcha Brown Sugar">
+                  <span>Regular 16 oz</span>
+                  <span>Soft Cream</span>
+                </div>
+                <div class="menu-footer">
+                  <strong>Rp15.000</strong>
+                  <button class="order-btn" type="button" data-product="Matcha Brown Sugar">Beli</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-image">
+                <img src="assets/chocomatcha.jpeg" alt="Choco Matcha" />
+              </div>
+              <div class="menu-info">
+                <h3>Choco Matcha</h3>
+                <p>Perpaduan matcha premium dan cokelat manis legits yang super rich.</p>
+                <div class="menu-meta" aria-label="Detail Matcha Brown Sugar">
+                  <span>Regular 16 oz</span>
+                  <span>Sweet Chocolate</span>
+                </div>
+                <div class="menu-footer">
+                  <strong>Rp15.000</strong>
+                  <button class="order-btn" type="button" data-product="Matcha Brown Sugar">Beli</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-image">
+                <img src="assets/matchacookies.jpeg" alt="Matcha Cookies" />
+              </div>
+              <div class="menu-info">
+                <h3>Matcha Cookies</h3>
+                <p>Es matcha creamy dengan taburan remahan biskuit yang renyah.</p>
+                <div class="menu-meta" aria-label="Detail Matcha Brown Sugar">
+                  <span>Regular 16 oz</span>
+                  <span>Crunchy Cookies</span>
+                </div>
+                <div class="menu-footer">
+                  <strong>Rp15.000</strong>
+                  <button class="order-btn" type="button" data-product="Matcha Brown Sugar">Beli</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-card">
+              <div class="menu-image">
+                <img src="assets/coconutmatcha.jpeg" alt="Coconut Matcha" />
+              </div>
+              <div class="menu-info">
+                <h3>Coconut Matcha</h3>
+                <p>Kesegaran tropis dari perpaduan air kelapa gurih dan matcha.</p>
+                <div class="menu-meta" aria-label="Detail Matcha Brown Sugar">
+                  <span>Regular 16 oz</span>
+                  <span>Fresh Coconut</span>
+                </div>
+                <div class="menu-footer">
+                  <strong>Rp15.000</strong>
+                  <button class="order-btn" type="button" data-product="Matcha Brown Sugar">Beli</button>
+                </div>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
@@ -408,18 +516,43 @@
         </div>
       </section>
 
+      <!-- SECTION KONTAK & LOKASI UTANH -->
       <section class="section final-cta" id="kontak">
         <div class="container cta-panel">
-          <div>
-            <p class="eyebrow">Order hari ini</p>
-            <h2>Sudah tahu mau pilih yang mana?</h2>
-            <p>Yuk pesan Mamamatcha favoritmu sekarang. Area layanan: sekitar kampus, kantor, dan pickup point Mamamatcha.</p>
+          
+          <!-- Kolom Kiri: Keterangan Tetap Utuh & Sosmed Simpel -->
+          <div class="contact-info" style="padding-right: 20px;">
+            <p class="eyebrow">Hubungi & Ikuti Kami</p>
+            <h2>Find Mamamatcha Here!</h2>
+            <p class="hero-text" style="color: var(--ink); opacity: 0.8; margin-bottom: 24px;">
+              Pesan duluan tanpa antre via WhatsApp, atau intip keseruan menu baru dan promo menarik kami di media sosial.
+            </p>
+            <div class="cta-actions">
+              <a class="btn btn-primary" href="https://wa.me/6281234567890?text=Halo%20Mamamatcha%2C%20saya%20mau%20pesan" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-whatsapp" style="margin-right: 8px;"></i> WhatsApp Order
+              </a>
+              <a class="btn btn-secondary" href="https://instagram.com/mamamatcha.losari" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-instagram" style="margin-right: 8px;"></i> @mamamatcha.losari
+              </a>
+              <a class="btn btn-secondary" href="https://tiktok.com/@mamamatcha.losari" target="_blank" rel="noreferrer">
+                <i class="fa-brands fa-tiktok" style="margin-right: 8px;"></i> @mamamatcha.losari
+              </a>
+            </div>
           </div>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="https://wa.me/6281234567890?text=Halo%20Mamamatcha%2C%20saya%20mau%20pesan" target="_blank" rel="noreferrer">
-              Order via WhatsApp
+
+          <!-- Kolom Kanan: Alamat Fisik Booth -->
+          <div class="location-box" style="border-left: 2px dashed var(--line); padding-left: 28px;">
+            <p class="eyebrow">Lokasi Booth</p>
+            <h3 style="font-size: 1.4rem; color: var(--matcha-deep); margin-bottom: 8px;">📍 Mamamatcha Losari</h3>
+            <p style="font-size: 0.95rem; line-height: 1.5; margin-bottom: 12px;">
+              Jalan Raya Losari, RT.01/RW.01, Dusun II, Losari, Kec. Rembang, Kabupaten Purbalingga, Jawa Tengah.
+            </p>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 20px;">
+              🕒 <strong>Jam Buka:</strong> Setiap Hari (10.00 - 17.00 WIB)
+            </p>
+            <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Mamamatcha+Losari+Rembang+Purbalingga" target="_blank" rel="noreferrer" style="background: var(--cream); border-color: var(--matcha);">
+              🗺️ Petunjuk Rute Google Maps
             </a>
-            <a class="btn btn-secondary" href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
           </div>
         </div>
       </section>
