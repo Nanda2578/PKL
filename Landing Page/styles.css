@@ -627,68 +627,76 @@ h3 {
   }
 
   /* =======================================================
-     SOLUSI JITU HERO DI HP: MEMBONGKAR DAN MENATA ULANG GRID
+     SOLUSI JITU HERO DI HP: STRUKTUR BARIS PRESET YANG RAPI
      ======================================================= */
   
-  /* 1. Mengaktifkan Grid Utama untuk Menyusun Judul & Foto Menu */
+  /* 1. Reset Grid Utama menjadi 3 Susunan Baris Vertikal Terstruktur */
   .hero-grid {
     display: grid !important;
-    grid-template-columns: 1.25fr 0.75fr !important; /* Judul di kiri, Foto Menu di kanan */
+    grid-template-columns: 1.15fr 0.85fr !important; /* Proporsi tulisan kiri, foto kanan */
     align-items: center !important;
-    gap: 16px 12px !important;
+    gap: 12px 14px !important;
   }
 
-  /* 2. Trik Ajaib: Membongkar Pembungkus Bawaan (.hero-content) */
+  /* 2. Bongkar pembungkus bawaan */
   .hero-grid > div:first-child {
     display: contents !important; 
   }
 
-  /* 3. Aturan Teks Judul (Sisi Kiri Atas) */
+  /* 3. BARIS 1: @mamamatchadrink.losari Dipaksa di Paling Atas Sendirian */
+  .eyebrow {
+    grid-column: 1 / span 2 !important; /* Membentang penuh kiri ke kanan */
+    grid-row: 1 !important;             /* Kunci di baris PERTAMA */
+    text-align: left !important;        /* Pojok kiri pas */
+    margin: 0 0 4px 0 !important;
+    font-size: 0.74rem !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  /* 4. BARIS 2 KIRI: Judul Utama Teks (Terbaca Sempurna & Bagus) */
   h1 {
     grid-column: 1 !important; 
-    grid-row: 1 !important;    
-    font-size: clamp(1.1rem, 4.2vw, 1.55rem) !important; 
+    grid-row: 2 !important;    /* Kunci di baris KEDUA */
+    font-size: clamp(1.15rem, 4.4vw, 1.65rem) !important; /* Disesuaikan ukurannya biar makin pas dan tebal */
     line-height: 1.15 !important;
     margin-bottom: 0 !important;
     align-self: center !important;
   }
 
-  /* 4. Menyembunyikan Deskripsi Teks & Tombol Besar Khusus di HP */
+  /* Sembunyikan subteks & tombol yang menumpuk */
   .hero-text,
   .hero-actions {
     display: none !important;
   }
 
-  /* 5. Aturan Blok Foto (Sisi Kanan Atas) */
+  /* 5. BARIS 2 KANAN: Foto Menu (Diperbesar Sedikit & Proporsional Sempurna) */
   .hero-visual {
     grid-column: 2 !important; 
-    grid-row: 1 !important;    
+    grid-row: 2 !important;    /* Kunci sejajar berdampingan dengan h1 */
     margin: 0 !important;
     width: 100% !important;
   }
 
-  /* 6. Mempertahankan Rasio Foto Asli (Tidak Kotak Persegi Gepeng) */
   .hero-visual img {
     width: 100% !important;
     height: auto !important;         
-    max-height: 105px !important;    /* Tinggi dikunci pas biar pas berdampingan dengan h1 */
+    max-height: 125px !important;    /* Dinaikkan sedikit dari 105px ke 125px biar kelihatan lebih besar & memanjakan mata */
     object-fit: contain !important;  
-    border-radius: 12px !important;
+    border-radius: 14px !important;
     filter: none !important;
   }
 
-  /* 7. Menaruh 3 Kotak Statistik Tepat di Bawah Kombinasi Judul + Foto */
+  /* 6. BARIS 3: 3 Kotak Statistik Horizontal Tepat Di Bawah Judul + Foto */
   .hero-stats {
     grid-column: 1 / span 2 !important; 
-    grid-row: 2 !important;             
+    grid-row: 3 !important;    /* Kunci di baris KETIGA */
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important; 
     gap: 6px !important;
-    margin-top: 4px !important;
+    margin-top: 6px !important;
     width: 100% !important;
   }
 
-  /* 8. Ukuran Kotak Statistik Dibuat Mini */
   .hero-stats div {
     min-height: auto !important;
     padding: 8px 4px !important;
@@ -697,7 +705,7 @@ h3 {
   }
 
   .hero-stats strong {
-    font-size: 0.9rem !important;
+    font-size: 0.92rem !important;
     line-height: 1 !important;
   }
 
@@ -708,10 +716,41 @@ h3 {
   }
 
   /* =======================================================
+     PERBAIKAN FITUR "KENAPA MAMAMATCHA?": KOTAK PAS DI HP
+     ======================================================= */
+  .features-grid {
+    grid-template-columns: 1fr !important; /* Berbaris rapi ke bawah */
+    gap: 12px !important;
+  }
+
+  .feature-card {
+    padding: 16px !important; /* Diperkecil padding-nya agar tidak kebesaran / makan ruang */
+    width: 100% !important;
+    box-shadow: 0 4px 14px rgba(38, 53, 40, 0.04) !important;
+  }
+
+  .feature-icon {
+    width: 36px !important;  /* Ukuran icon disesuaikan dengan layar HP */
+    height: 36px !important;
+    margin-bottom: 12px !important;
+    font-size: 0.95rem !important;
+  }
+
+  .feature-card h3 {
+    font-size: 1.02rem !important; /* Judul box pas */
+    margin-bottom: 6px !important;
+  }
+
+  .feature-card p {
+    font-size: 0.86rem !important; /* Teks deskripsi ramping dan enak dibaca */
+    line-height: 1.4 !important;
+  }
+
+  /* =======================================================
      PERBAIKAN TESTIMONI: 1 KOTAK 1 BARIS PENUH (PAS DI HP)
      ======================================================= */
   .testimonials-grid {
-    grid-template-columns: 1fr !important; /* Dipaksa 1 kolom memanjang kebawah */
+    grid-template-columns: 1fr !important; 
     gap: 12px !important;
   }
 
@@ -732,10 +771,6 @@ h3 {
      ======================================================= */
   h2 {
     font-size: clamp(1.9rem, 10vw, 2.7rem);
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr;
   }
 
   /* Mengubah Menu Card Jadi 2 Kolom Ringkas di HP */
