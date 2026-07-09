@@ -582,10 +582,6 @@ h3 {
   .menu-grid {
     grid-template-columns: 1fr;
   }
-
-  .testimonials-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 /* KHUSUS ATURAN TAMPILAN DI HP (LAYAR KECIL) */
@@ -630,70 +626,112 @@ h3 {
     padding: 60px 0;
   }
 
-  /* KUNCI UTAMA HERO HP: Teks judul (h1, text, actions) berdampingan sebaris dengan Foto Menu */
+  /* =======================================================
+     SOLUSI JITU HERO DI HP: MEMBONGKAR DAN MENATA ULANG GRID
+     ======================================================= */
+  
+  /* 1. Mengaktifkan Grid Utama untuk Menyusun Judul & Foto Menu */
   .hero-grid {
-    grid-template-columns: 1.25fr 0.75fr;
-    align-items: center;
-    gap: 12px;
+    display: grid !important;
+    grid-template-columns: 1.25fr 0.75fr !important; /* Judul di kiri, Foto Menu di kanan */
+    align-items: center !important;
+    gap: 16px 12px !important;
   }
 
+  /* 2. Trik Ajaib: Membongkar Pembungkus Bawaan (.hero-content) */
+  .hero-grid > div:first-child {
+    display: contents !important; 
+  }
+
+  /* 3. Aturan Teks Judul (Sisi Kiri Atas) */
   h1 {
-    font-size: clamp(1.15rem, 4.5vw, 1.7rem);
-    line-height: 1.1;
-    margin-bottom: 6px;
+    grid-column: 1 !important; 
+    grid-row: 1 !important;    
+    font-size: clamp(1.1rem, 4.2vw, 1.55rem) !important; 
+    line-height: 1.15 !important;
+    margin-bottom: 0 !important;
+    align-self: center !important;
   }
 
-  h2 {
-    font-size: clamp(1.9rem, 10vw, 2.7rem);
-  }
-
-  .hero-text {
-    font-size: 0.78rem;
-    line-height: 1.3;
-    margin-bottom: 8px;
-  }
-
+  /* 4. Menyembunyikan Deskripsi Teks & Tombol Besar Khusus di HP */
+  .hero-text,
   .hero-actions {
-    gap: 6px;
+    display: none !important;
   }
 
-  .hero-actions .btn {
-    width: 100%;
-    min-height: 34px;
-    padding: 6px 10px;
-    font-size: 0.75rem;
+  /* 5. Aturan Blok Foto (Sisi Kanan Atas) */
+  .hero-visual {
+    grid-column: 2 !important; 
+    grid-row: 1 !important;    
+    margin: 0 !important;
+    width: 100% !important;
   }
 
-  /* Mengunci tinggi foto menu agar proporsional sejajar dengan tinggi tulisan di kirinya */
+  /* 6. Mempertahankan Rasio Foto Asli (Tidak Kotak Persegi Gepeng) */
   .hero-visual img {
-    height: 120px;
-    object-fit: cover;
-    border-radius: 12px;
+    width: 100% !important;
+    height: auto !important;         
+    max-height: 105px !important;    /* Tinggi dikunci pas biar pas berdampingan dengan h1 */
+    object-fit: contain !important;  
+    border-radius: 12px !important;
+    filter: none !important;
   }
 
-  /* KUNCI STATISTIK HP: Kotak 3 ditaruh pas di bawah kombinasi foto+teks, ukurannya diperkecil mini */
+  /* 7. Menaruh 3 Kotak Statistik Tepat di Bawah Kombinasi Judul + Foto */
   .hero-stats {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6px;
-    margin-top: 16px;
+    grid-column: 1 / span 2 !important; 
+    grid-row: 2 !important;             
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important; 
+    gap: 6px !important;
+    margin-top: 4px !important;
+    width: 100% !important;
   }
 
+  /* 8. Ukuran Kotak Statistik Dibuat Mini */
   .hero-stats div {
-    min-height: auto;
-    padding: 8px 4px;
-    text-align: center;
-    border-radius: 6px;
+    min-height: auto !important;
+    padding: 8px 4px !important;
+    text-align: center !important;
+    border-radius: 6px !important;
   }
 
   .hero-stats strong {
-    font-size: 0.95rem;
-    line-height: 1;
+    font-size: 0.9rem !important;
+    line-height: 1 !important;
   }
 
   .hero-stats span {
-    font-size: 0.65rem;
-    margin-top: 2px;
-    line-height: 1.1;
+    font-size: 0.62rem !important;
+    margin-top: 2px !important;
+    line-height: 1.1 !important;
+  }
+
+  /* =======================================================
+     PERBAIKAN TESTIMONI: 1 KOTAK 1 BARIS PENUH (PAS DI HP)
+     ======================================================= */
+  .testimonials-grid {
+    grid-template-columns: 1fr !important; /* Dipaksa 1 kolom memanjang kebawah */
+    gap: 12px !important;
+  }
+
+  .testimonial-card {
+    padding: 16px !important; 
+    width: 100% !important; 
+    box-shadow: 0 4px 12px rgba(38, 53, 40, 0.04) !important; 
+  }
+
+  .testimonial-card p {
+    font-size: 0.88rem !important; 
+    line-height: 1.4 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* =======================================================
+     SISA KODE RESPONSIVE LAINNYA TETAP AMAN DAN RAPI
+     ======================================================= */
+  h2 {
+    font-size: clamp(1.9rem, 10vw, 2.7rem);
   }
 
   .features-grid {
@@ -742,7 +780,7 @@ h3 {
     font-size: 0.75rem;
   }
 
-  /* BAGIAN GALERI DI HP: Diubah Menjadi Kolom Kolase 2 Kolom yang Estetik */
+  /* BAGIAN GALERI DI HP */
   .gallery-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
