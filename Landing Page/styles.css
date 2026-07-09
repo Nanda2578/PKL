@@ -623,73 +623,86 @@ h3 {
 
   .section,
   .section-band {
-    padding: 60px 0;
+    padding: 50px 0 54px 0;
   }
 
   /* =======================================================
-     SOLUSI JITU HERO DI HP: STRUKTUR BARIS PRESET YANG RAPI
+     SUPER HERO RESPONSIVE: STRUKTUR GRID 4 TINGKAT SEMPURNA
      ======================================================= */
   
-  /* 1. Reset Grid Utama menjadi 3 Susunan Baris Vertikal Terstruktur */
+  /* 1. Reset Grid Utama menjadi layout yang fleksibel */
   .hero-grid {
     display: grid !important;
-    grid-template-columns: 1.15fr 0.85fr !important; /* Proporsi tulisan kiri, foto kanan */
-    align-items: center !important;
+    grid-template-columns: 1fr 1fr !important; /* Dibagi rata, foto mengisi sisa ruang kanan otomatis */
+    align-items: flex-start !important;
     gap: 12px 14px !important;
   }
 
-  /* 2. Bongkar pembungkus bawaan */
+  /* 2. Bongkar pembungkus bawaan agar elemen bisa diatur barisnya */
   .hero-grid > div:first-child {
     display: contents !important; 
   }
 
-  /* 3. BARIS 1: @mamamatchadrink.losari Dipaksa di Paling Atas Sendirian */
+  /* TINGKAT 1: @mamamatchadrink.losari paling atas */
   .eyebrow {
-    grid-column: 1 / span 2 !important; /* Membentang penuh kiri ke kanan */
-    grid-row: 1 !important;             /* Kunci di baris PERTAMA */
-    text-align: left !important;        /* Pojok kiri pas */
-    margin: 0 0 4px 0 !important;
+    grid-column: 1 / span 2 !important; 
+    grid-row: 1 !important;             
+    text-align: left !important;        
+    margin: 0 0 2px 0 !important;
     font-size: 0.74rem !important;
-    letter-spacing: 0.05em !important;
   }
 
-  /* 4. BARIS 2 KIRI: Judul Utama Teks (Terbaca Sempurna & Bagus) */
+  /* TINGKAT 2 KIRI: Judul Utama Patah-Patah Sesuai Request */
   h1 {
     grid-column: 1 !important; 
-    grid-row: 2 !important;    /* Kunci di baris KEDUA */
-    font-size: clamp(1.15rem, 4.4vw, 1.65rem) !important; /* Disesuaikan ukurannya biar makin pas dan tebal */
-    line-height: 1.15 !important;
+    grid-row: 2 !important;    
+    font-size: 1.35rem !important; /* Ukuran pas biar teks mengalir berbaris ke bawah */
+    line-height: 1.22 !important;
+    font-weight: 800 !important;
     margin-bottom: 0 !important;
+    white-space: pre-line !important; /* Menjamin patahan teks terbaca akurat di HP */
     align-self: center !important;
   }
 
-  /* Sembunyikan subteks & tombol yang menumpuk */
-  .hero-text,
+  /* Sembunyikan tombol actions yang mengganggu di area atas HP */
   .hero-actions {
     display: none !important;
   }
 
-  /* 5. BARIS 2 KANAN: Foto Menu (Diperbesar Sedikit & Proporsional Sempurna) */
+  /* TINGKAT 2 KANAN: Foto Menu Halus (Mengisi sisa ruang kanan secara otomatis) */
   .hero-visual {
     grid-column: 2 !important; 
-    grid-row: 2 !important;    /* Kunci sejajar berdampingan dengan h1 */
+    grid-row: 2 !important;    
     margin: 0 !important;
     width: 100% !important;
+    align-self: center !important;
   }
 
   .hero-visual img {
     width: 100% !important;
     height: auto !important;         
-    max-height: 125px !important;    /* Dinaikkan sedikit dari 105px ke 125px biar kelihatan lebih besar & memanjakan mata */
+    max-height: 140px !important;    /* Tinggi maksimal disesuaikan agar serasi dengan teks di kiri */
     object-fit: contain !important;  
-    border-radius: 14px !important;
+    border-radius: 12px !important;  /* KUNCI: Border radius melengkung halus, tidak lancip lagi */
     filter: none !important;
   }
 
-  /* 6. BARIS 3: 3 Kotak Statistik Horizontal Tepat Di Bawah Judul + Foto */
+  /* TINGKAT 3: Menampilkan Kembali Teks Deskripsi ("Dari matcha klasik...") */
+  .hero-text {
+    display: block !important;       /* KUNCI: Menghidupkan kembali teks deskripsi */
+    grid-column: 1 / span 2 !important; 
+    grid-row: 3 !important;          /* Diletakkan tepat di bawah kombinasi judul & foto */
+    margin-top: 6px !important;
+    margin-bottom: 4px !important;
+    font-size: 0.85rem !important;   /* Ukuran pas & tidak kebesaran */
+    line-height: 1.45 !important;
+    color: var(--muted) !important;
+  }
+
+  /* TINGKAT 4: 3 Kotak Statistik Horizontal Paling Bawah */
   .hero-stats {
     grid-column: 1 / span 2 !important; 
-    grid-row: 3 !important;    /* Kunci di baris KETIGA */
+    grid-row: 4 !important;          
     display: grid !important;
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important; 
     gap: 6px !important;
@@ -716,33 +729,33 @@ h3 {
   }
 
   /* =======================================================
-     PERBAIKAN FITUR "KENAPA MAMAMATCHA?": KOTAK PAS DI HP
+     FITUR "KENAPA MAMAMATCHA?": KOTAK PAS DI HP
      ======================================================= */
   .features-grid {
-    grid-template-columns: 1fr !important; /* Berbaris rapi ke bawah */
+    grid-template-columns: 1fr !important; 
     gap: 12px !important;
   }
 
   .feature-card {
-    padding: 16px !important; /* Diperkecil padding-nya agar tidak kebesaran / makan ruang */
+    padding: 16px !important; 
     width: 100% !important;
     box-shadow: 0 4px 14px rgba(38, 53, 40, 0.04) !important;
   }
 
   .feature-icon {
-    width: 36px !important;  /* Ukuran icon disesuaikan dengan layar HP */
+    width: 36px !important;  
     height: 36px !important;
     margin-bottom: 12px !important;
     font-size: 0.95rem !important;
   }
 
   .feature-card h3 {
-    font-size: 1.02rem !important; /* Judul box pas */
+    font-size: 1.02rem !important; 
     margin-bottom: 6px !important;
   }
 
   .feature-card p {
-    font-size: 0.86rem !important; /* Teks deskripsi ramping dan enak dibaca */
+    font-size: 0.86rem !important; 
     line-height: 1.4 !important;
   }
 
