@@ -111,7 +111,6 @@ button {
   color: var(--muted);
 }
 
-/* Efek Hover teks Navigasi biasa */
 .nav-menu a:not(.nav-order) {
   position: relative;
   transition: color 0.3s ease;
@@ -121,7 +120,6 @@ button {
   color: var(--matcha-deep);
 }
 
-/* Animasi garis bawah tumbuh dari tengah */
 .nav-menu a:not(.nav-order)::after {
   content: '';
   position: absolute;
@@ -313,7 +311,6 @@ h3 {
   color: var(--muted);
 }
 
-/* PERBAIKAN: Menyejajarkan judul menu dan tombol "Tanya Stok" di kanan atas desktop */
 .split {
   display: flex;
   align-items: flex-end;
@@ -345,9 +342,8 @@ h3 {
 }
 
 /* ==========================================
-   CARDS & GRID SYSTEM
+   CARDS & GRID SYSTEM (TAMPILAN LAPTOP)
    ========================================== */
-/* PERBAIKAN: Mengubah dari 3 menjadi 5 kolom agar kartu keunggulan sejajar kesamping */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -387,6 +383,7 @@ h3 {
   color: var(--muted);
 }
 
+/* Menu Grid Laptop: Tetap 4 Kolom Sempurna */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -439,7 +436,6 @@ h3 {
   font-size: 0.94rem;
 }
 
-/* PERBAIKAN: Mengunci posisi tag varian agar tidak melar raksasa */
 .menu-meta {
   display: flex;
   flex-wrap: wrap;
@@ -449,7 +445,6 @@ h3 {
   margin-bottom: 18px;
 }
 
-/* PERBAIKAN: Menata ulang tag ukuran/varian menjadi kotak kapsul proporsional */
 .menu-meta span {
   display: inline-block;
   padding: 5px 11px;
@@ -499,29 +494,36 @@ h3 {
 }
 
 /* ==========================================
-   GALLERY & CTA PANELS
+   GALLERY & CTA PANELS (TAMPILAN LAPTOP)
    ========================================== */
 .gallery-section {
   padding-top: 0;
 }
 
+/* PERBAIKAN GALERI LAPTOP: Dibuat 3 Kolom Proporsional Sejajar */
 .gallery-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr 0.85fr;
-  gap: 18px;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 16px;
 }
 
 .gallery-grid img {
   width: 100%;
-  height: 320px;
+  height: 280px;
   object-fit: cover;
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  transition: transform 0.3s ease;
 }
 
+/* Mengunci Gambar Pertama (Daftar Menu) Panjang Kebawah Menutup Bagian Bolong */
 .gallery-grid img:first-child {
   grid-row: span 2;
-  height: 658px;
+  height: 576px;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
 }
 
 .cta-panel {
@@ -581,23 +583,12 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .testimonials-grid,
-  .gallery-grid {
+  .testimonials-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .gallery-grid img {
-    height: auto;
-    aspect-ratio: 16 / 10;
-  }
-
-  .gallery-grid img:first-child {
-    grid-row: auto;
-    grid-column: 1 / -1;
-    height: auto;
   }
 }
 
+/* KHUSUS ATURAN TAMPILAN DI HP (LAYAR KECIL) */
 @media (max-width: 760px) {
   .container,
   .navbar {
@@ -648,10 +639,68 @@ h3 {
   }
 
   .hero-stats,
-  .features-grid,
-  .menu-grid,
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* KUNCI UTAMA: Mengubah Menu Card Jadi 2 Kolom Ringkas di HP */
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .menu-info {
+    padding: 12px;
+  }
+
+  .menu-info h3 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+
+  .menu-info p {
+    font-size: 0.82rem;
+    line-height: 1.4;
+    min-height: auto;
+    margin-bottom: 12px;
+  }
+
+  .menu-meta {
+    min-height: auto;
+    gap: 4px;
+    margin-bottom: 14px;
+  }
+
+  .menu-meta span {
+    padding: 4px 8px;
+    font-size: 0.68rem;
+  }
+
+  .menu-footer strong {
+    font-size: 0.9rem;
+  }
+
+  .order-btn {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  /* GALERI DI HP: Diubah Menjadi 1 Kolom Vertikal Sejajar yang Indah */
   .gallery-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gallery-grid img {
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .gallery-grid img:first-child {
+    grid-row: auto;
+    grid-column: auto;
+    height: auto;
+    aspect-ratio: 1 / 1.4; /* Daftar menu sedikit memanjang agar teks terbaca */
   }
 
   .split,
@@ -659,7 +708,6 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  /* Responsif Tombol Tanya Stok saat dibuka di HP */
   .split {
     flex-direction: column;
     align-items: flex-start;
@@ -675,11 +723,6 @@ h3 {
   .hero-actions .btn,
   .cta-actions .btn {
     width: 100%;
-  }
-
-  .menu-info p,
-  .menu-meta {
-    min-height: auto;
   }
 
   .cta-panel {
