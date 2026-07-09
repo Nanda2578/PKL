@@ -630,11 +630,11 @@ h3 {
      SUPER HERO RESPONSIVE: STRUKTUR GRID 4 TINGKAT SEMPURNA
      ======================================================= */
   
-  /* 1. Reset Grid Utama menjadi layout yang fleksibel */
+  /* 1. Atur Kolom: Komposisi ideal agar font membesar sedikit, dan foto di sisa kanan tampil FULL padat */
   .hero-grid {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important; /* Dibagi rata, foto mengisi sisa ruang kanan otomatis */
-    align-items: flex-start !important;
+    grid-template-columns: 1.1fr 0.9fr !important; 
+    align-items: stretch !important; /* KUNCI: Memaksa tinggi foto mengikuti tinggi teks di kiri */
     gap: 12px 14px !important;
   }
 
@@ -652,15 +652,15 @@ h3 {
     font-size: 0.74rem !important;
   }
 
-  /* TINGKAT 2 KIRI: Judul Utama Patah-Patah Sesuai Request */
+  /* TINGKAT 2 KIRI: Judul Utama Diperbesar Sedikit & Rapi Patah-Patah */
   h1 {
     grid-column: 1 !important; 
     grid-row: 2 !important;    
-    font-size: 1.35rem !important; /* Ukuran pas biar teks mengalir berbaris ke bawah */
-    line-height: 1.22 !important;
+    font-size: 1.48rem !important; /* KUNCI: Ukuran font diperbesar sedikit agar manis & pas */
+    line-height: 1.25 !important;
     font-weight: 800 !important;
     margin-bottom: 0 !important;
-    white-space: pre-line !important; /* Menjamin patahan teks terbaca akurat di HP */
+    white-space: pre-line !important; /* Membaca ketukan enter pada file HTML */
     align-self: center !important;
   }
 
@@ -669,32 +669,32 @@ h3 {
     display: none !important;
   }
 
-  /* TINGKAT 2 KANAN: Foto Menu Halus (Mengisi sisa ruang kanan secara otomatis) */
+  /* TINGKAT 2 KANAN: Foto Menu Mengisi Sisa Ruang Kanan Secara FULL & Sudut Halus */
   .hero-visual {
     grid-column: 2 !important; 
     grid-row: 2 !important;    
     margin: 0 !important;
     width: 100% !important;
-    align-self: center !important;
+    display: flex !important;
   }
 
   .hero-visual img {
     width: 100% !important;
-    height: auto !important;         
-    max-height: 140px !important;    /* Tinggi maksimal disesuaikan agar serasi dengan teks di kiri */
-    object-fit: contain !important;  
-    border-radius: 12px !important;  /* KUNCI: Border radius melengkung halus, tidak lancip lagi */
+    height: 100% !important;         /* Mengisi penuh tinggi area kanan */
+    max-height: none !important;     /* Menghapus batas tinggi agar foto ga jadi kecil */
+    object-fit: cover !important;    /* KUNCI: Foto full memotong area sisa kanan dengan proporsional */
+    border-radius: 12px !important;  /* KUNCI: Diperhalus dengan border radius lembut, tidak lancip */
     filter: none !important;
   }
 
   /* TINGKAT 3: Menampilkan Kembali Teks Deskripsi ("Dari matcha klasik...") */
   .hero-text {
-    display: block !important;       /* KUNCI: Menghidupkan kembali teks deskripsi */
+    display: block !important;       
     grid-column: 1 / span 2 !important; 
-    grid-row: 3 !important;          /* Diletakkan tepat di bawah kombinasi judul & foto */
-    margin-top: 6px !important;
+    grid-row: 3 !important;          
+    margin-top: 10px !important;     /* Jarak manis di bawah foto & judul */
     margin-bottom: 4px !important;
-    font-size: 0.85rem !important;   /* Ukuran pas & tidak kebesaran */
+    font-size: 0.85rem !important;   
     line-height: 1.45 !important;
     color: var(--muted) !important;
   }
